@@ -9,8 +9,6 @@ public class Borrower {
     private Date dateBorrowed;
     private List<Book> borrowedBooks;
 
-
-
     public Borrower(String borrowerName, int accountNumber, Date dateBorrowed, List<Book> borrowedBooks) {
         this.borrowerName = borrowerName;
         this.accountNumber = accountNumber;
@@ -50,8 +48,15 @@ public class Borrower {
         this.borrowedBooks = borrowedBooks;
     }
 
-    public void borrowBook(List<Book> book) {
-
+    public void borrowBooks(List<Book> books) {
+        for ( Book book: books) {
+            if (book.getStatus() == BookState.AVAILABLE) {
+                book.setStatus(BookState.BORROWED);
+            }
+            else {
+                return;
+            }
+        }
     }
 
     @Override
