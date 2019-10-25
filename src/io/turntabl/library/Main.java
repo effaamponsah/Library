@@ -48,6 +48,8 @@ public class Main {
             }
         }
 
+        printList(comicBooks);
+
 
         List<Borrower>  silverBorrowers = new ArrayList<>();
         for ( Borrower borrower: borrowers ) {
@@ -55,6 +57,21 @@ public class Main {
                 silverBorrowers.add(borrower);
             }
         }
+
+        List<String> silverNamedBorrowers = new ArrayList<>();
+        for ( Borrower name: silverBorrowers ) {
+            silverNamedBorrowers.add(name.getBorrowerName());
+        }
+        printNames(silverNamedBorrowers);
+    }
+
+
+    private static void printList(List<Book> list) {
+        System.out.println(list);
+    }
+
+    private static void printNames( List<String> names) {
+        System.out.println(names);
     }
 
 }
