@@ -8,12 +8,22 @@ public class Borrower {
     private int accountNumber;
     private Date dateBorrowed;
     private List<Book> borrowedBooks;
+    private BorrowedType borrowerType;
 
-    public Borrower(String borrowerName, int accountNumber, Date dateBorrowed, List<Book> borrowedBooks) {
+    public Borrower(String borrowerName, int accountNumber, Date dateBorrowed, List<Book> borrowedBooks, BorrowedType borrowerType) {
         this.borrowerName = borrowerName;
         this.accountNumber = accountNumber;
         this.dateBorrowed = dateBorrowed;
         this.borrowedBooks = borrowedBooks;
+        this.borrowerType = borrowerType;
+    }
+
+    public BorrowedType getBorrowerType() {
+        return borrowerType;
+    }
+
+    public void setBorrowerType(BorrowedType borrowerType) {
+        this.borrowerType = borrowerType;
     }
 
     public String getBorrowerName() {
@@ -54,7 +64,7 @@ public class Borrower {
                 book.setStatus(BookState.BORROWED);
             }
             else {
-                return;
+                System.out.println("The book is not available");
             }
         }
     }

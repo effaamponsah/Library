@@ -8,13 +8,12 @@ public class Book {
     private BookState status;
     private BorrowedType type;
 
-    public Book(String bookTitle, String author, String ISBN, BookCategory category, BookState status, BorrowedType type) {
+    public Book(String bookTitle, String author, String ISBN, BookCategory category, BookState status) {
         this.bookTitle = bookTitle;
         this.author = author;
         this.ISBN = ISBN;
         this.category = category;
         this.status = status;
-        this.type = type;
     }
 
     public String getBookTitle() {
