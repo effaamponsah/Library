@@ -41,10 +41,10 @@ public class Main {
                 new Borrower("Sarkodie", 1233, new Date(), Arrays.asList(), BorrowedType.SILVER)
                 );
 
-        List<Book> availableBooks = new ArrayList<>();
-        for ( Book available: books ) {
-            if ( available.getCategory() == BookCategory.COMIC ) {
-                availableBooks.add(available);
+        List<Book> comicBooks = new ArrayList<>();
+        for ( Book comic: books ) {
+            if ( comic.getCategory() == BookCategory.COMIC ) {
+                comicBooks.add(comic);
             }
         }
 
